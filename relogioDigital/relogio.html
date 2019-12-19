@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Relogio Digital</title>
+    <style>
+        body {
+            background-color: #19161d;
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #logo {
+            background-image: url("logo.png");
+            top: 50px;
+            width: 418px;
+            height: 185px;
+            background-repeat: no-repeat;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #box {
+            width: 60%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.877);
+            font-size: 80px;
+            font-family: Myriad Pro;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px 2px 10px 2px;
+            box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.329);
+            text-align: center;
+           
+        }
+
+        #footer{
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+        function hora(){
+             var tempo = new Date();
+                var hora = tempo.getHours();
+                var minuto = tempo.getMinutes();
+                var segundos = tempo.getSeconds();
+
+                var horaFinal = addZero(hora) + ":" + addZero(minuto) + ":" + addZero(segundos);
+                document.getElementById("hour").innerHTML = horaFinal;
+                setInterval("hora()",1000);
+        }
+
+        function addZero(num){
+            return (num < 10) ? "0"+num : num;
+        }
+
+        function diaAtual(){
+            var dias = ["Domingo", "Segunda", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sabado"];
+            var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            var data = new Date();
+
+            var diaSemana = data.getUTCDay();
+            var diaMes = data.getDate();
+            var mes = data.getMonth();
+            var ano = data.getFullYear();
+            document.getElementById("dia").innerHTML = dias[diaSemana] + ", " + diaMes + " de " + meses[mes] + " de " + ano;
+        }
+        
+    </script>
+</head>
+<body  onload="hora(), diaAtual()">
+
+    <div id="logo"></div>
+    <div id="box">
+        <div id="dia" style="font-size: 20px; padding-top: 15px;"></div>
+        <div id="hour"></div>
+    </div>
+    
+    <div id="footer">&copy Jhonatan Cunha</div>
+
+</body>
+</html>
