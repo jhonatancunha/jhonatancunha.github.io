@@ -21,7 +21,7 @@ function carregarItens(itens){
 
 function addAction(){
     const mensagem = window.document.getElementById("msg").value;
-    if(mensagem != ""){
+    if(mensagem.trim() != ""){
         TAREFAS.push({
             name : mensagem,
             done: false,
@@ -29,6 +29,8 @@ function addAction(){
             });
         addMessage(mensagem, id);
         id++;
+    }else{
+        document.getElementById("msg").value = '';//LIMPA CAMPO DE TEXT DEPOIS DE ADD
     }
     sortElementsArray();// ORGANIZANDO ID's NO ARRAY TAREFAS
     sortElementsHTML();// ORDENA ID's NO DOM HTML
@@ -39,8 +41,8 @@ function addMessage(mensagem, ids){
     const divInsertion = window.document.getElementById("middle");
     const item =  `<div class="task" id="${ids}">
     <p class="title" style="float: left;">${mensagem}</p>
-    <input type="button" id= "${ids}" class="remove" onclick="remove(${ids})"/>
-    <input type="button" id="${ids}" class="done" onclick="done(${ids})"/>
+    <input type="button" id= "${ids}" class="remove" onclick="remove(${ids})" title="Excluir Tarefa"/>
+    <input type="button" id="${ids}" class="done" onclick="done(${ids})" title="Concluir Tarefa"/>
     </div>
     `
 
