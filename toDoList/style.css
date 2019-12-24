@@ -1,0 +1,136 @@
+body{
+    background-color: #c8c8c8;
+}
+
+
+/* STYLE DO CAMPO DAS TAREFAS ADICIONADAS */
+.title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.task{
+    width: 800px;
+    height: 65px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.308);
+}
+
+.done{
+    width: 40px;
+    background-image: url("icons/done.png");
+    margin-top: 10px;
+    background-color: transparent;
+    margin-right: 10px;
+    height: 40px;
+    border: none;
+    float: right;
+    opacity: 30%;
+    transition: 0.3s;
+}
+
+.done:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.remove{
+    width: 40px;
+    background-image: url("icons/delete.png");
+    margin-top: 10px;
+    background-color: transparent;
+    height: 40px;
+    border: none;
+    float: right;
+    margin-right: 25px;
+    opacity: 30%;
+    transition: 0.3s;
+}
+
+.remove:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+
+#corpo{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    background-color: white;
+    width: 800px;
+    height: 700px;
+    border-radius: 10px 10px 10px 10px;
+}
+/* FIM */
+
+
+#topo{
+    background-image: url("images/back.png");
+    width: 800px;
+    height: 130px;
+    border-bottom: 2px solid rgb(204, 204, 204);
+    background-position: center;
+}
+
+#middle{
+    height: 500px;
+    width: auto;
+    border-bottom: 2px solid rgb(204, 204, 204);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#bottom{
+    padding-top: 10px;
+}
+
+
+/* CAMPO DE ADICIONAR A MENSAGEM */
+#msg{
+    width: 700px;
+    height: 35px;
+    border-radius: 6px 6px 6px 6px;
+    border: 2px solid rgb(204, 204, 204);
+    margin-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+#ok{
+    background-color: transparent;
+    background-image: url("icons/add-button.png");
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    float: left;
+    margin-left: 20px;
+    opacity: 20%;
+    transition: 0.3s;
+}
+
+#ok:hover{
+    opacity: 100%;
+}
+
+#ok:hover{
+    cursor: pointer;
+}
+
+
+#footer{
+    text-align: center;
+    margin-top: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+  
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    background: rgb(0, 140, 255); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.151); 
+}
